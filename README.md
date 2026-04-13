@@ -39,28 +39,5 @@ Genesis Arc introduces a stage driven lifecycle that ensures:
 
 ```mermaid
 flowchart LR
-    A["Stage 0  
-    SIGNAL  
-    Identify real opportunities early"]
+    A["Stage 0 Signal"] --> B["Stage 1 Qualify"] --> C["Stage 2 Value"] --> D["Stage 3 Convert"] --> E["Stage 4 Deliver"] --> F["Stage 5 Amplify"]
 
-    B["Stage 1  
-    QUALIFY  
-    Focus on what can be won"]
-
-    C["Stage 2  
-    VALUE  
-    Shape the commercial outcome"]
-
-    D["Stage 3  
-    CONVERT  
-    Secure commitment"]
-
-    E["Stage 4  
-    DELIVER  
-    Execute with confidence"]
-
-    F["Stage 5  
-    AMPLIFY  
-    Scale growth"]
-
-    A --> B --> C --> D --> E --> F
