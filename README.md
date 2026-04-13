@@ -25,7 +25,7 @@ Genesis Arc fixes this.
 
 ## What Genesis Arc Does
 
-Genesis Arc introduces a stage and gate driven lifecycle that ensures:
+Genesis Arc introduces a stage driven lifecycle that ensures:
 
 - Only the right opportunities progress  
 - The right data is captured at the right time  
@@ -35,23 +35,32 @@ Genesis Arc introduces a stage and gate driven lifecycle that ensures:
 
 ---
 
-## The Full Lifecycle (Stages and Gates)
+## The Lifecycle
 
 ```mermaid
 flowchart LR
-    A[Stage 0 Signal] --> B[Gate 0 Signal Check]
+    A["Stage 0  
+    SIGNAL  
+    Identify real opportunities early"]
 
-    B --> C[Stage 1 Qualify]
-    C --> D[Gate 1 Qualification Gate]
+    B["Stage 1  
+    QUALIFY  
+    Focus on what can be won"]
 
-    D --> E[Stage 2 Value]
-    E --> F[Gate 2 Value Gate]
+    C["Stage 2  
+    VALUE  
+    Shape the commercial outcome"]
 
-    F --> G[Stage 3 Convert]
-    G --> H[Gate 3 Conversion Gate]
+    D["Stage 3  
+    CONVERT  
+    Secure commitment"]
 
-    H --> I[Stage 4 Deliver]
-    I --> J[Gate 4 Delivery Readiness Gate]
+    E["Stage 4  
+    DELIVER  
+    Execute with confidence"]
 
-    J --> K[Stage 5 Amplify]
-    K --> L[Gate 5 Growth Gate]
+    F["Stage 5  
+    AMPLIFY  
+    Scale growth"]
+
+    A --> B --> C --> D --> E --> F
