@@ -1,6 +1,4 @@
 
-
-```markdown
 # Stage 0 Signal
 
 ## Objective
