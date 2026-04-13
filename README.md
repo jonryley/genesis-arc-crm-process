@@ -1,38 +1,36 @@
-# Genesis Arc CRM Process
+# Genesis Arc  
+## The Gated Business Lifecycle for Scalable Growth
 
-Genesis Arc is a gated business lifecycle designed to help organisations identify, qualify, shape, convert, deliver, and grow commercial opportunities with greater clarity, discipline, and consistency.
+**Turn sales from activity into execution.**  
+**Turn CRM from a system of record into a system of growth.**
 
-It combines stage progression, gate control, and structured CRM data to improve win rates, forecasting, delivery confidence, and long term account growth.
+Genesis Arc is a practical commercial operating system designed to help organisations win more business, improve forecasting, and scale delivery with confidence.
 
-## Core Principles
+---
 
-- Focus on the right opportunities early
-- Capture the right data at the right time
-- Use gates to drive decision quality
-- Align sales, delivery, and leadership
-- Build scalable growth through delivery and expansion
+## 🚀 What is Genesis Arc
 
-## Lifecycle
+Genesis Arc is a **stage and gate driven commercial lifecycle** that aligns:
 
-- Stage 0 Signal
-- Stage 1 Qualify
-- Stage 2 Value
-- Stage 3 Convert
-- Stage 4 Deliver
-- Stage 5 Amplify
+- Sales  
+- Business Development  
+- CRM  
+- Data  
+- Delivery  
 
-## Structure
+It ensures opportunities only progress when the right evidence, alignment, and commercial logic exist.
 
-- `/stages` defines the objective, activities, outputs, and required progress for each stage
-- `/gates` defines the decision criteria for stage progression
-- `/fields` defines the CRM data model that supports each stage
-- `/templates` provides reusable operating tools
+---
 
-## Why this matters
+## 🧭 The Lifecycle
 
-Many CRM systems track activity. Genesis Arc is designed to track progress, quality of decision making, and commercial momentum.
-
-That makes the CRM more than a system of record. It becomes a system of execution.
+```mermaid
+flowchart LR
+    A[0 Signal] --> B[1 Qualify]
+    B --> C[2 Value]
+    C --> D[3 Convert]
+    D --> E[4 Deliver]
+    E --> F[5 Amplify]
 
 ## Author
 
