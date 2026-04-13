@@ -1,6 +1,4 @@
----
 
-# /stages/stage-0-signal.md
 
 ```markdown
 # Stage 0 Signal
