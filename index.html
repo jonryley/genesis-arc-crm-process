@@ -1,243 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Genesis Arc | Jon Ryley</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<title>Genesis Arc | Interactive Pipeline</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0b0b0b;
-      color: #ffffff;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0b0b0b;
+  color: white;
+}
 
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px 20px;
-    }
+.container {
+  padding: 40px;
+}
 
-    h1, h2, h3 {
-      color: #d4af37;
-    }
+h1, h2, h3 {
+  color: #d4af37;
+  text-align: center;
+}
 
-    p {
-      line-height: 1.6;
-      color: #dddddd;
-    }
+/* KANBAN */
 
-    .logo {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      width: 120px;
-    }
+.kanban {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  margin-top: 40px;
+}
 
-    .hero {
-      text-align: center;
-      padding: 100px 20px 60px;
-    }
+.column {
+  min-width: 260px;
+  background: #111;
+  border: 1px solid #333;
+  padding: 15px;
+}
 
-    .hero h1 {
-      font-size: 48px;
-    }
+.card {
+  background: #1a1a1a;
+  padding: 14px;
+  margin-bottom: 12px;
+  border: 1px solid #333;
+  cursor: pointer;
+  transition: 0.2s;
+}
 
-    .hero h2 {
-      font-size: 22px;
-      font-weight: normal;
-    }
+.card:hover {
+  border-color: #d4af37;
+}
 
-    .btn {
-      display: inline-block;
-      margin: 12px;
-      padding: 14px 28px;
-      border: 1px solid #d4af37;
-      color: #d4af37;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+/* MODAL */
 
-    .btn:hover {
-      background-color: #d4af37;
-      color: #000;
-    }
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+}
 
-    .section {
-      margin-top: 80px;
-      text-align: center;
-    }
+.modal-content {
+  background: #111;
+  margin: 10% auto;
+  padding: 30px;
+  width: 90%;
+  max-width: 600px;
+  border: 1px solid #333;
+}
 
-    .grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 40px;
-    }
-
-    .card-box {
-      border: 1px solid #333;
-      padding: 25px;
-      margin: 15px;
-      width: 280px;
-      background: #111;
-    }
-
-    /* KANBAN */
-
-    .kanban {
-      display: flex;
-      overflow-x: auto;
-      padding: 20px 0;
-    }
-
-    .column {
-      min-width: 220px;
-      margin-right: 15px;
-      background: #111;
-      border: 1px solid #333;
-      padding: 15px;
-    }
-
-    .column h3 {
-      text-align: center;
-      margin-bottom: 15px;
-    }
-
-    .card {
-      background: #1a1a1a;
-      padding: 12px;
-      margin-bottom: 10px;
-      border: 1px solid #333;
-      font-size: 14px;
-    }
-
-    .card small {
-      color: #888;
-    }
-
-    .footer {
-      text-align: center;
-      margin-top: 100px;
-      padding: 30px;
-      border-top: 1px solid #333;
-      color: #888;
-    }
-
-  </style>
+.close {
+  float: right;
+  cursor: pointer;
+  color: #d4af37;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- LOGO -->
-  <img src="images/JR%20Logo%2001%20New.png" class="logo" />
+<div class="container">
 
-  <div class="container">
+<h1>Genesis Arc</h1>
+<h2>Interactive Pipeline</h2>
 
-    <!-- HERO -->
-    <div class="hero">
-      <h1>Genesis Arc</h1>
-      <h2>The Gated Business Lifecycle</h2>
-      <p>
-        A commercial operating system that transforms how organisations win, deliver, and grow business.
-      </p>
+<div class="kanban">
 
-      <a href="https://jonryley.com/contact" class="btn">Start a Conversation</a>
-    </div>
+<div class="column">
+<h3>Signal</h3>
+<div class="card" onclick="openModal('Telent Bid Process','£300k','Early opportunity identified','Initial leadership discussion')">
+Telent Bid Process<br><small>£300k</small>
+</div>
+</div>
 
-    <!-- PROBLEM -->
-    <div class="section">
-      <h2>The Reality</h2>
-      <p>
-        Most organisations do not have a pipeline problem.  
-        They have a qualification problem.
-      </p>
+<div class="column">
+<h3>Qualify</h3>
+<div class="card" onclick="openModal('Network Rail Opex','£750k','Clear problem and buyer identified','Stakeholder engagement')">
+Network Rail Opex<br><small>£750k</small>
+</div>
+</div>
 
-      <div class="grid">
-        <div class="card-box">Too many weak opportunities progress</div>
-        <div class="card-box">CRM tracks activity, not decisions</div>
-        <div class="card-box">Forecasts based on optimism</div>
-      </div>
-    </div>
+<div class="column">
+<h3>Value</h3>
+<div class="card" onclick="openModal('D2Zero Growth','£1.2M','Value proposition defined','Build commercial model')">
+D2Zero Growth<br><small>£1.2M</small>
+</div>
+</div>
 
-    <!-- PIPELINE -->
-    <div class="section">
-      <h2>Pipeline in Motion</h2>
-      <p>Opportunities move through structured stages with clear decision gates</p>
+<div class="column">
+<h3>Convert</h3>
+<div class="card" onclick="openModal('Evelyn Partners','£500k','Proposal submitted','Close plan execution')">
+Evelyn Partners<br><small>£500k</small>
+</div>
+</div>
 
-      <div class="kanban">
+<div class="column">
+<h3>Deliver</h3>
+<div class="card" onclick="openModal('Centrica Net Zero','£1.5M','Programme in delivery','Expand engagement')">
+Centrica Net Zero<br><small>£1.5M</small>
+</div>
+</div>
 
-        <div class="column">
-          <h3>Signal</h3>
-          <div class="card">Telent Bid Process<br><small>£300k</small></div>
-        </div>
+<div class="column">
+<h3>Amplify</h3>
+<div class="card" onclick="openModal('Hughes Energy','High Growth','Expansion identified','Scale across business')">
+Hughes Energy<br><small>High Growth</small>
+</div>
+</div>
 
-        <div class="column">
-          <h3>Qualify</h3>
-          <div class="card">Network Rail Opex<br><small>£750k</small></div>
-        </div>
+</div>
 
-        <div class="column">
-          <h3>Value</h3>
-          <div class="card">D2Zero Growth Model<br><small>£1.2M</small></div>
-        </div>
+</div>
 
-        <div class="column">
-          <h3>Convert</h3>
-          <div class="card">Evelyn Partners CRM<br><small>£500k</small></div>
-        </div>
+<!-- MODAL -->
 
-        <div class="column">
-          <h3>Deliver</h3>
-          <div class="card">Centrica Net Zero<br><small>£1.5M</small></div>
-        </div>
+<div id="modal" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal()">X</span>
+<h2 id="title"></h2>
+<p><strong>Value:</strong> <span id="value"></span></p>
+<p><strong>Status:</strong> <span id="status"></span></p>
+<p><strong>Next Step:</strong> <span id="next"></span></p>
+</div>
+</div>
 
-        <div class="column">
-          <h3>Amplify</h3>
-          <div class="card">Hughes Energy Expansion<br><small>High Growth</small></div>
-        </div>
+<script>
+function openModal(title,value,status,next){
+  document.getElementById("modal").style.display = "block";
+  document.getElementById("title").innerText = title;
+  document.getElementById("value").innerText = value;
+  document.getElementById("status").innerText = status;
+  document.getElementById("next").innerText = next;
+}
 
-      </div>
-    </div>
-
-    <!-- PRINCIPLE -->
-    <div class="section">
-      <h2>Core Principle</h2>
-      <p>
-        Gates create truth.  
-        Truth creates growth.
-      </p>
-    </div>
-
-    <!-- DIFFERENCE -->
-    <div class="section">
-      <h2>The Difference</h2>
-      <p>
-        CRM tracks activity.  
-        Genesis Arc controls progression.
-      </p>
-    </div>
-
-    <!-- CTA -->
-    <div class="section">
-      <h2>If sales feels harder than it should</h2>
-      <p>
-        It is not a capability problem.  
-        It is a structure problem.
-      </p>
-
-      <a href="https://jonryley.com/contact" class="btn">Let’s Fix It</a>
-    </div>
-
-    <!-- FOOTER -->
-    <div class="footer">
-      <p>Jon Ryley</p>
-      <p>jonryley.com</p>
-    </div>
-
-  </div>
+function closeModal(){
+  document.getElementById("modal").style.display = "none";
+}
+</script>
 
 </body>
 </html>
