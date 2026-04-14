@@ -2,55 +2,104 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Genesis Arc | Interactive Pipeline</title>
-  
+<title>Genesis Arc | Pipeline</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+
 body {
   margin: 0;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   background: #0b0b0b;
   color: white;
 }
 
-.container {
-  padding: 40px;
-}
-
-h1, h2, h3 {
-  color: #d4af37;
-  text-align: center;
-}
-
-/* KANBAN */
-
-.kanban {
+.header {
+  padding: 20px 40px;
+  border-bottom: 1px solid #222;
   display: flex;
-  overflow-x: auto;
-  gap: 15px;
-  margin-top: 40px;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.column {
-  min-width: 260px;
+.header h1 {
+  color: #d4af37;
+  margin: 0;
+}
+
+.container {
+  padding: 20px;
+}
+
+/* PIPELINE */
+
+.pipeline {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+}
+
+.stage {
   background: #111;
-  border: 1px solid #333;
-  padding: 15px;
+  border: 1px solid #222;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* STAGE HEADER */
+
+.stage-header {
+  padding: 12px;
+  border-bottom: 1px solid #222;
+  background: #0f0f0f;
+}
+
+.stage-title {
+  font-weight: bold;
+  color: #d4af37;
+}
+
+.stage-value {
+  font-size: 12px;
+  color: #888;
+}
+
+/* CARDS */
+
+.stage-body {
+  padding: 10px;
 }
 
 .card {
   background: #1a1a1a;
-  padding: 14px;
-  margin-bottom: 12px;
   border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 10px;
   cursor: pointer;
-  transition: 0.2s;
+  transition: all 0.2s;
 }
 
 .card:hover {
   border-color: #d4af37;
+  transform: translateY(-2px);
 }
+
+.card-title {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.card-value {
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* HEALTH */
+
+.green { border-left: 4px solid #2ecc71; }
+.amber { border-left: 4px solid #f39c12; }
+.red { border-left: 4px solid #e74c3c; }
 
 /* MODAL */
 
@@ -66,7 +115,7 @@ h1, h2, h3 {
 
 .modal-content {
   background: #111;
-  margin: 10% auto;
+  margin: 8% auto;
   padding: 30px;
   width: 90%;
   max-width: 600px;
@@ -78,62 +127,110 @@ h1, h2, h3 {
   cursor: pointer;
   color: #d4af37;
 }
+
 </style>
 </head>
 
 <body>
 
+<div class="header">
+  <h1>Genesis Arc Pipeline</h1>
+  <div>Gated Business Lifecycle</div>
+</div>
+
 <div class="container">
 
-<h1>Genesis Arc</h1>
-<h2>Interactive Pipeline</h2>
+<div class="pipeline">
 
-<div class="kanban">
-
-<div class="column">
-<h3>Signal</h3>
-<div class="card" onclick="openModal('Telent Bid Process','£300k','Early opportunity identified','Initial leadership discussion')">
-Telent Bid Process<br><small>£300k</small>
-</div>
-</div>
-
-<div class="column">
-<h3>Qualify</h3>
-<div class="card" onclick="openModal('Network Rail Opex','£750k','Clear problem and buyer identified','Stakeholder engagement')">
-Network Rail Opex<br><small>£750k</small>
-</div>
+<!-- SIGNAL -->
+<div class="stage">
+  <div class="stage-header">
+    <div class="stage-title">Signal</div>
+    <div class="stage-value">£800k</div>
+  </div>
+  <div class="stage-body">
+    <div class="card amber" onclick="openModal('Telent Bid Process','£300k','Early stage','Engage stakeholders')">
+      <div class="card-title">Telent Bid Process</div>
+      <div class="card-value">£300k</div>
+    </div>
+  </div>
 </div>
 
-<div class="column">
-<h3>Value</h3>
-<div class="card" onclick="openModal('D2Zero Growth','£1.2M','Value proposition defined','Build commercial model')">
-D2Zero Growth<br><small>£1.2M</small>
-</div>
-</div>
-
-<div class="column">
-<h3>Convert</h3>
-<div class="card" onclick="openModal('Evelyn Partners','£500k','Proposal submitted','Close plan execution')">
-Evelyn Partners<br><small>£500k</small>
-</div>
-</div>
-
-<div class="column">
-<h3>Deliver</h3>
-<div class="card" onclick="openModal('Centrica Net Zero','£1.5M','Programme in delivery','Expand engagement')">
-Centrica Net Zero<br><small>£1.5M</small>
-</div>
+<!-- QUALIFY -->
+<div class="stage">
+  <div class="stage-header">
+    <div class="stage-title">Qualify</div>
+    <div class="stage-value">£1.85M</div>
+  </div>
+  <div class="stage-body">
+    <div class="card green" onclick="openModal('Network Rail Opex','£750k','Qualified','Define value')">
+      <div class="card-title">Network Rail Opex</div>
+      <div class="card-value">£750k</div>
+    </div>
+    <div class="card amber" onclick="openModal('TfGM Signalling','£1.1M','Needs shaping','Stakeholder alignment')">
+      <div class="card-title">TfGM Signalling</div>
+      <div class="card-value">£1.1M</div>
+    </div>
+  </div>
 </div>
 
-<div class="column">
-<h3>Amplify</h3>
-<div class="card" onclick="openModal('Hughes Energy','High Growth','Expansion identified','Scale across business')">
-Hughes Energy<br><small>High Growth</small>
+<!-- VALUE -->
+<div class="stage">
+  <div class="stage-header">
+    <div class="stage-title">Value</div>
+    <div class="stage-value">£1.2M</div>
+  </div>
+  <div class="stage-body">
+    <div class="card green" onclick="openModal('D2Zero Growth','£1.2M','Value defined','Build proposal')">
+      <div class="card-title">D2Zero Growth</div>
+      <div class="card-value">£1.2M</div>
+    </div>
+  </div>
 </div>
+
+<!-- CONVERT -->
+<div class="stage">
+  <div class="stage-header">
+    <div class="stage-title">Convert</div>
+    <div class="stage-value">£500k</div>
+  </div>
+  <div class="stage-body">
+    <div class="card amber" onclick="openModal('Evelyn Partners','£500k','Proposal stage','Close plan')">
+      <div class="card-title">Evelyn Partners CRM</div>
+      <div class="card-value">£500k</div>
+    </div>
+  </div>
+</div>
+
+<!-- DELIVER -->
+<div class="stage">
+  <div class="stage-header">
+    <div class="stage-title">Deliver</div>
+    <div class="stage-value">£1.5M</div>
+  </div>
+  <div class="stage-body">
+    <div class="card green" onclick="openModal('Centrica Net Zero','£1.5M','In delivery','Expand')">
+      <div class="card-title">Centrica Net Zero</div>
+      <div class="card-value">£1.5M</div>
+    </div>
+  </div>
+</div>
+
+<!-- AMPLIFY -->
+<div class="stage">
+  <div class="stage-header">
+    <div class="stage-title">Amplify</div>
+    <div class="stage-value">High Growth</div>
+  </div>
+  <div class="stage-body">
+    <div class="card green" onclick="openModal('Hughes Energy','High Growth','Scaling','Expand across group')">
+      <div class="card-title">Hughes Energy</div>
+      <div class="card-value">Expansion</div>
+    </div>
+  </div>
 </div>
 
 </div>
-
 </div>
 
 <!-- MODAL -->
