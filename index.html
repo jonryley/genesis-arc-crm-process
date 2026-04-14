@@ -175,7 +175,8 @@ body {
     <div class="stage-value" id="signalTotal"></div>
   </div>
   <div class="stage-body">
-    <div class="card amber" data-value="300000" onclick="openModal('Telent Bid Process','£300k','Early stage','Engage stakeholders')">
+    <div class="card amber" data-value="300000"
+    onclick="openModal('Telent Bid Process','£300k','Early stage','Engage stakeholders','https://github.com/jonryley/GA-GBL-process/blob/main/stages/stage-0-signal.md')">
       <div class="card-title">Telent Bid Process</div>
       <div class="card-value">£300k</div>
     </div>
@@ -189,11 +190,14 @@ body {
     <div class="stage-value" id="qualifyTotal"></div>
   </div>
   <div class="stage-body">
-    <div class="card green" data-value="750000" onclick="openModal('Network Rail Opex','£750k','Qualified','Define value')">
+    <div class="card green" data-value="750000"
+    onclick="openModal('Network Rail Opex','£750k','Qualified','Define value','https://github.com/jonryley/GA-GBL-process/blob/main/stages/stage-1-qualify.md')">
       <div class="card-title">Network Rail Opex</div>
       <div class="card-value">£750k</div>
     </div>
-    <div class="card amber" data-value="1100000" onclick="openModal('TfGM Signalling','£1.1M','Needs shaping','Stakeholder alignment')">
+
+    <div class="card amber" data-value="1100000"
+    onclick="openModal('TfGM Signalling','£1.1M','Needs shaping','Stakeholder alignment','https://github.com/jonryley/GA-GBL-process/blob/main/stages/stage-1-qualify.md')">
       <div class="card-title">TfGM Signalling</div>
       <div class="card-value">£1.1M</div>
     </div>
@@ -207,7 +211,8 @@ body {
     <div class="stage-value" id="valueTotal"></div>
   </div>
   <div class="stage-body">
-    <div class="card green" data-value="1200000" onclick="openModal('D2Zero Growth','£1.2M','Value defined','Build proposal')">
+    <div class="card green" data-value="1200000"
+    onclick="openModal('D2Zero Growth','£1.2M','Value defined','Build proposal','https://github.com/jonryley/GA-GBL-process/blob/main/stages/stage-2-value.md')">
       <div class="card-title">D2Zero Growth</div>
       <div class="card-value">£1.2M</div>
     </div>
@@ -221,7 +226,8 @@ body {
     <div class="stage-value" id="convertTotal"></div>
   </div>
   <div class="stage-body">
-    <div class="card amber" data-value="500000" onclick="openModal('Evelyn Partners','£500k','Proposal stage','Close plan')">
+    <div class="card amber" data-value="500000"
+    onclick="openModal('Evelyn Partners','£500k','Proposal stage','Close plan','https://github.com/jonryley/GA-GBL-process/blob/main/stages/stage-3-convert.md')">
       <div class="card-title">Evelyn Partners CRM</div>
       <div class="card-value">£500k</div>
     </div>
@@ -235,7 +241,8 @@ body {
     <div class="stage-value" id="deliverTotal"></div>
   </div>
   <div class="stage-body">
-    <div class="card green" data-value="1500000" onclick="openModal('Centrica Net Zero','£1.5M','In delivery','Expand')">
+    <div class="card green" data-value="1500000"
+    onclick="openModal('Centrica Net Zero','£1.5M','In delivery','Expand','https://github.com/jonryley/GA-GBL-process/blob/main/stages/stage-4-deliver.md')">
       <div class="card-title">Centrica Net Zero</div>
       <div class="card-value">£1.5M</div>
     </div>
@@ -249,7 +256,8 @@ body {
     <div class="stage-value" id="amplifyTotal"></div>
   </div>
   <div class="stage-body">
-    <div class="card green" data-value="2000000" onclick="openModal('Hughes Energy','High Growth','Scaling','Expand across group')">
+    <div class="card green" data-value="2000000"
+    onclick="openModal('Hughes Energy','High Growth','Scaling','Expand across group','https://github.com/jonryley/GA-GBL-process/blob/main/stages/stage-5-amplify.md')">
       <div class="card-title">Hughes Energy</div>
       <div class="card-value">Expansion</div>
     </div>
@@ -264,10 +272,19 @@ body {
 <div id="modal" class="modal">
 <div class="modal-content">
 <span class="close" onclick="closeModal()">X</span>
+
 <h2 id="title"></h2>
+
 <p><strong>Value:</strong> <span id="value"></span></p>
 <p><strong>Status:</strong> <span id="status"></span></p>
 <p><strong>Next Step:</strong> <span id="next"></span></p>
+
+<br>
+
+<a id="stageLink" href="#" target="_blank" style="color:#d4af37;">
+  View Stage Definition
+</a>
+
 </div>
 </div>
 
@@ -275,12 +292,13 @@ body {
 
 /* MODAL */
 
-function openModal(title,value,status,next){
+function openModal(title,value,status,next,stageUrl){
   document.getElementById("modal").style.display = "block";
   document.getElementById("title").innerText = title;
   document.getElementById("value").innerText = value;
   document.getElementById("status").innerText = status;
   document.getElementById("next").innerText = next;
+  document.getElementById("stageLink").href = stageUrl;
 }
 
 function closeModal(){
@@ -291,15 +309,6 @@ function closeModal(){
 
 function calculatePipeline() {
   let total = 0;
-
-  let stageTotals = {
-    signal: 0,
-    qualify: 0,
-    value: 0,
-    convert: 0,
-    deliver: 0,
-    amplify: 0
-  };
 
   document.querySelectorAll('.stage').forEach(stage => {
     let stageName = stage.querySelector('.stage-title').innerText.toLowerCase();
@@ -313,11 +322,8 @@ function calculatePipeline() {
       }
     });
 
-    if(stageTotals[stageName] !== undefined){
-      stageTotals[stageName] = stageTotal;
-      document.getElementById(stageName + "Total").innerText =
-        "£" + stageTotal.toLocaleString();
-    }
+    document.getElementById(stageName + "Total").innerText =
+      "£" + stageTotal.toLocaleString();
   });
 
   document.getElementById('totalPipeline').innerText =
