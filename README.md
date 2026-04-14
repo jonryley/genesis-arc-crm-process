@@ -39,6 +39,11 @@ Genesis Arc introduces a stage driven lifecycle that ensures:
 
 ---
 
+That closes the Mermaid section.
+
+Your working bottom section should look like this:
+
+:::writing{variant="standard" id="18452"}
 ## The Lifecycle
 
 ```mermaid
