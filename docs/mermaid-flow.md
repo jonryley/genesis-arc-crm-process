@@ -1,4 +1,4 @@
-# Genesis Arc Mermaid Flow
+# Summit Mermaid Flow
 
 ```mermaid
 flowchart LR
