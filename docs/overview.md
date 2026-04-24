@@ -1,6 +1,6 @@
-# Genesis Arc Overview
+# Summit Overview
 
-Genesis Arc is a practical commercial operating model for sales, business development, account growth, and revenue execution.
+Summit is a practical commercial operating model for sales, business development, account growth, and revenue execution.
 
 It is built around a simple principle:
 
