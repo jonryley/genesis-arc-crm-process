@@ -1,4 +1,4 @@
-# Genesis Arc Data Model
+# Summit Data Model
 
 The CRM data model is structured around five levels:
 
