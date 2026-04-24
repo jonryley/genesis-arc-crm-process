@@ -8,7 +8,7 @@ All rights reserved.
 
 ## Overview
 
-Genesis Arc is a proprietary commercial framework developed by Jon Ryley.
+Summit is a proprietary commercial framework developed by Jon Ryley.
 
 This repository and its contents are provided for informational and evaluation purposes only.
 
