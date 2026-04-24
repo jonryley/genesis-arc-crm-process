@@ -1,4 +1,4 @@
-# Genesis Arc Stages and Gates
+# Summit Stages and Gates
 
 ## Stage 0 Signal
 Objective: Identify a credible opportunity signal worth exploring.
