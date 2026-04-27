@@ -1,4 +1,4 @@
-<p align="right">
+<p align="left">
   <img src="images/JR%20Logo%2001%20New.png" alt="Jon Ryley Logo" width="120"/>
 </p>
 <p align="right">
