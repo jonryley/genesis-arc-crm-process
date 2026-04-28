@@ -4,12 +4,28 @@
   <img src="images/Summit%20logo%20alpha.png" alt="Summit Logo" width="240"/>
 </p>
 
-# Summit Operating Stack 
+ Summit Operating Model  
+## The Operating Stack for Predictable, Scalable Growth
+
+Summit is not just a sales process.
+
+It is a commercial operating model that connects people, process, CRM, data, AI and governance into one disciplined growth system.
 
 ---
-The Summit Framework drives decisions.
+
+## The Summit Operating Stack
+
+```text
 People
+  ↓
 Process
+  ↓
 CRM
+  ↓
+Data
+  ↓
 AI
+  ↓
 Governance
+  ↓
+Growth
