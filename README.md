@@ -56,6 +56,15 @@ Summit introduces a stage driven lifecycle that ensures:
 - Growth is built on successful delivery, not constant new selling  
 
 ---
+## Who Summit Serves
+
+- PE backed growth businesses  
+- Enterprise sales organisations  
+- Regulated sector complex bids  
+- CRM transformation programmes  
+- Revenue operations leaders
+
+---
 
 ## Summit in Practice
 
