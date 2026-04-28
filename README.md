@@ -73,6 +73,8 @@ Interested in applying Summit in your organisation?
 Contact:
 https://jonryley.com/contact
 
+---
+
 ## Summit in Practice
 
 <p align="center">
