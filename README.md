@@ -41,7 +41,7 @@ It ensures opportunities move based on evidence, not optimism.
 - [Services](SERVICES.md)
 - [Operating Model](OPERATING-MODEL.md)
 - [Stage Definitions](stages/)
-
+- [Gate Definitions](gates/)
 ---
 
 ## Why Summit Exists
