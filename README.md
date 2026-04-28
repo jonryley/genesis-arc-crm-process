@@ -9,6 +9,7 @@
 
 # Summit  
 ## The Gated Business Lifecycle for Predictable, Scalable Growth
+A commercial operating system for predictable scalable growth.
 
 Most repositories store information.
 
