@@ -10,9 +10,13 @@
 
 # Summit Growth Engine
 ## Powered by the Gated Business Lifecycle
-### A commercial operating system for predictable scalable growth.
+### Structure for growth-Discipline for scale.
 
 ---
+## Summit Operating Stack
+
+text
+People → Process → CRM → Data → AI → Governance → Growth
 
 The Summit Framework drives decisions.
 
