@@ -224,7 +224,7 @@ function renderPipeline() {
         card.dataset.close = closeDate;
 
         card.innerHTML = `
-          <div class="card-title">${title} <span class="tag">"${offerType}"</span></div>
+         <div class="card-title">${title} <span class="tag">(${offerType})</span></div>
           <div class="card-value">Value: ${formatMoney(value)}</div>
           <div class="card-date">Close: ${closeDate}</div>
           <div class="card-status">Status: ${stage.status}</div>
