@@ -76,7 +76,28 @@ Truth creates growth.
 
 ---
 
-## 3. CRM
+## 3. Controls
+
+Controls turn process into governance.
+
+Summit uses practical controls to ensure opportunities move based on evidence, not assumption.
+
+### Control Examples
+
+- Quick Qualifier  
+- Gate Readiness Check  
+- Opportunity Classification  
+- Sales to Delivery Handover  
+- Growth on a Page  
+- Monthly Growth Review  
+
+### Principle
+
+If the evidence is not there, the opportunity does not move.
+
+---
+
+## 4. CRM
 
 CRM should not just record activity.
 
@@ -97,7 +118,7 @@ CRM becomes a system of execution, not just a system of record.
 
 ---
 
-## 4. Data
+## 5. Data
 
 Good decisions need good data.
 
@@ -120,7 +141,7 @@ Capture the right data at the right time.
 
 ---
 
-## 5. AI
+## 6. AI
 
 AI only works when the commercial process underneath it is clear.
 
@@ -142,7 +163,7 @@ It does not replace it.
 
 ---
 
-## 6. Governance
+## 7. Governance
 
 Governance keeps the system honest.
 
