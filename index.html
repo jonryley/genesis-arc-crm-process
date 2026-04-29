@@ -29,7 +29,7 @@ body{margin:0;font-family:Arial,sans-serif;background:#0b0b0b;color:white}
 .card:hover{border-color:#d4af37;transform:translateY(-2px)}
 .card.dragging{opacity:.55}
 .card.hidden{display:none}
-.card-title{font-size:14px;margin-bottom:6px}
+.card-title{font-size:14px;margin-bottom:6px;font-weight:bold}
 .card-value,.card-date,.card-status,.card-meta{font-size:12px}
 .card-value{color:#aaa;margin-bottom:4px}
 .card-date{color:#888}
@@ -95,15 +95,19 @@ a{color:#d4af37}
     <span class="close" onclick="closeModal()">X</span>
 
     <h2 id="title"></h2>
+
     <p><strong>Value:</strong> <span id="value"></span></p>
+    <p><strong>Close Date:</strong> <span id="closeDate"></span></p>
+    <p><strong>Status:</strong> <span id="status"></span></p>
     <p><strong>Sector:</strong> <span id="sector"></span></p>
     <p><strong>Classification:</strong> <span id="classification"></span></p>
-    <p><strong>Stage Status:</strong> <span id="status"></span></p>
+
+    <hr style="border:0;border-top:1px solid #333;margin:20px 0;">
+
     <p><strong>Gate Readiness:</strong> <span id="gateReadiness"></span></p>
     <p><strong>Handover:</strong> <span id="handover"></span></p>
     <p><strong>Review Status:</strong> <span id="reviewStatus"></span></p>
     <p><strong>Next Step:</strong> <span id="next"></span></p>
-    <p><strong>Close Date:</strong> <span id="closeDate"></span></p>
 
     <br>
 
@@ -122,42 +126,42 @@ const stages = [
     weight: 0.10,
     status: "Opportunity identified",
     stageUrl: "stages/stage-0-signal.md",
-    gateUrl: "gates/gate-0-signal.md"
+    gateUrl: "gates/gate-0-signal-check.md"
   },
   {
     name: "Qualify",
     weight: 0.25,
     status: "In qualification",
     stageUrl: "stages/stage-1-qualify.md",
-    gateUrl: "gates/gate-1-qualify.md"
+    gateUrl: "gates/gate-1-qualification-gate.md"
   },
   {
     name: "Value",
     weight: 0.50,
     status: "Value defined",
     stageUrl: "stages/stage-2-value.md",
-    gateUrl: "gates/gate-2-value.md"
+    gateUrl: "gates/gate-2-value-gate.md"
   },
   {
     name: "Convert",
     weight: 0.75,
     status: "Proposal and close",
     stageUrl: "stages/stage-3-convert.md",
-    gateUrl: "gates/gate-3-convert.md"
+    gateUrl: "gates/gate-3-conversion-gate.md"
   },
   {
     name: "Deliver",
     weight: 1.00,
     status: "In delivery",
     stageUrl: "stages/stage-4-deliver.md",
-    gateUrl: "gates/gate-4-deliver.md"
+    gateUrl: "gates/gate-4-delivery-readiness-gate.md"
   },
   {
     name: "Amplify",
     weight: 1.00,
     status: "Scaling",
     stageUrl: "stages/stage-5-amplify.md",
-    gateUrl: "gates/gate-5-amplify.md"
+    gateUrl: "gates/gate-5-growth-gate.md"
   }
 ];
 
@@ -254,15 +258,12 @@ function renderPipeline() {
 
         card.innerHTML = `
           <div class="card-title">${title}</div>
-          <div class="card-value">${formatMoney(value)}</div>
+          <div class="card-value">Value: ${formatMoney(value)}</div>
           <div class="card-date">Close: ${closeDate}</div>
           <div class="card-status">Status: ${stage.status}</div>
           <div class="card-meta">
             Sector: ${sector}<br>
-            Classification: ${classification}<br>
-            Gate Readiness: ${gateReadiness}<br>
-            Handover: ${handover}<br>
-            Review Status: ${reviewStatus}
+            Classification: ${classification}
           </div>
         `;
 
@@ -292,15 +293,15 @@ function openModalFromCard(card) {
 
   document.getElementById("modal").style.display = "block";
   document.getElementById("title").innerText = card.querySelector(".card-title").innerText;
-  document.getElementById("value").innerText = card.querySelector(".card-value").innerText;
+  document.getElementById("value").innerText = card.querySelector(".card-value").innerText.replace("Value: ", "");
+  document.getElementById("closeDate").innerText = card.dataset.close;
+  document.getElementById("status").innerText = meta.stageStatus;
   document.getElementById("sector").innerText = card.dataset.sector;
   document.getElementById("classification").innerText = card.dataset.classification;
-  document.getElementById("status").innerText = meta.stageStatus;
   document.getElementById("gateReadiness").innerText = card.dataset.gateReadiness;
   document.getElementById("handover").innerText = card.dataset.handover;
   document.getElementById("reviewStatus").innerText = card.dataset.reviewStatus;
   document.getElementById("next").innerText = getNextStepByStage(meta.stageName);
-  document.getElementById("closeDate").innerText = card.dataset.close;
   document.getElementById("stageLink").href = meta.stageUrl;
   document.getElementById("gateLink").href = meta.gateUrl;
 }
