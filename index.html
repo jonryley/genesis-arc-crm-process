@@ -30,7 +30,7 @@ body{margin:0;font-family:Arial,sans-serif;background:#0b0b0b;color:white}
 .card.dragging{opacity:.55}
 .card.hidden{display:none}
 .card-title{font-weight:bold;margin-bottom:6px;font-size:14px}
-.tag{color:#d4af37;font-weight:normal}
+.tag{color:#0b0b0b;background:#d4af37;padding:2px 6px;border-radius:10px;font-size:11px;margin-left:4px;font-weight:normal}
 .card-value,.card-date,.card-status,.card-meta{font-size:12px}
 .card-value{color:#aaa}
 .card-date{color:#888}
@@ -141,16 +141,18 @@ const opportunities = [
   ["Qualify","Beacon Energy Group","Energy",950000,"Complex","Upgrade","Pass","In Progress","On Track","10 Aug 2026","amber"],
   ["Qualify","Apex Energy Services","Energy",1200000,"Complex","Consultancy","Pass","In Progress","Watch","25 Aug 2026","green"],
   ["Qualify","Platform Rail Alliance","Rail",1050000,"Complex","Licence","Pass","In Progress","On Track","05 Sep 2026","amber"],
+  ["Qualify","Lumen Energy Lite","Energy",50000,"Lite","Pilot","Pass","Not Started","On Track","18 Oct 2026","green"],
+  ["Qualify","Bridgeway Rail Lite","Rail",50000,"Lite","Pilot","Pass","Not Started","On Track","22 Oct 2026","green"],
 
   ["Value","Pioneer Rail","Rail",1500000,"Complex","Consultancy","Pass","In Progress","On Track","15 Sep 2026","green"],
   ["Value","Dunstone Energy","Energy",1800000,"Transformational","Licence","Pass","In Progress","On Track","30 Sep 2026","green"],
   ["Value","Harbour Rail","Rail",1300000,"Complex","Upgrade","Pass","In Progress","Watch","10 Oct 2026","amber"],
-  ["Value","Lumen Energy Lite","Energy",50000,"Lite","Pilot","Pass","Not Started","On Track","18 Oct 2026","green"],
-  ["Value","Bridgeway Rail Lite","Rail",50000,"Lite","Pilot","Pass","Not Started","On Track","22 Oct 2026","green"],
 
   ["Convert","Westline Rail","Rail",900000,"Complex","Consultancy","Pass","In Progress","On Track","31 Jul 2026","amber"],
   ["Convert","Orion Energy","Energy",1100000,"Complex","Licence","Pass","In Progress","On Track","15 Aug 2026","green"],
   ["Convert","MetroLink Rail","Rail",850000,"Complex","Upgrade","Pass","In Progress","Watch","01 Sep 2026","amber"],
+  ["Convert","Moores Energy Lite","Energy",50000,"Lite","Pilot","Pass","In Progress","On Track","31 Oct 2026","green"],
+  ["Convert","Metro Rail Lite","Rail",50000,"Lite","Pilot","Pass","In Progress","On Track","05 Nov 2026","green"],
 
   ["Deliver","Keystone Rail","Rail",2000000,"Transformational","Licence","Pass","In Progress","On Track","30 Sep 2026","green"],
   ["Deliver","Atlas Energy","Energy",1700000,"Transformational","Consultancy","Pass","In Progress","On Track","10 Oct 2026","green"],
@@ -161,9 +163,7 @@ const opportunities = [
 
   ["Amplify","Vanguard Rail","Rail",3000000,"Transformational","Licence","Pass","Complete","On Track","31 Dec 2026","green"],
   ["Amplify","Titan Energy","Energy",4000000,"Transformational","Licence","Pass","Complete","On Track","31 Dec 2026","green"],
-  ["Amplify","National Rail Growth","Rail",3500000,"Transformational","Upgrade","Pass","Complete","On Track","31 Dec 2026","green"],
-  ["Amplify","Moores Energy Lite","Energy",50000,"Lite","Pilot","Pass","Complete","On Track","31 Dec 2026","green"],
-  ["Amplify","Metro Rail Lite","Rail",50000,"Lite","Pilot","Pass","Complete","On Track","31 Dec 2026","green"]
+  ["Amplify","National Rail Growth","Rail",3500000,"Transformational","Upgrade","Pass","Complete","On Track","31 Dec 2026","green"]
 ];
 
 function formatMoney(value) {
@@ -224,7 +224,7 @@ function renderPipeline() {
         card.dataset.close = closeDate;
 
         card.innerHTML = `
-         <div class="card-title">${title} <span class="tag">(${offerType})</span></div>
+          <div class="card-title">${title} <span class="tag">(${offerType})</span></div>
           <div class="card-value">Value: ${formatMoney(value)}</div>
           <div class="card-date">Close: ${closeDate}</div>
           <div class="card-status">Status: ${stage.status}</div>
@@ -290,6 +290,8 @@ function calculatePipeline() {
   let weighted = 0;
 
   document.querySelectorAll(".stage").forEach(stage => {
+    if (stage.style.display === "none") return;
+
     const stageName = stage.dataset.stage.toLowerCase();
     const stageWeight = parseFloat(stage.dataset.weight) || 0;
     let stageTotal = 0;
@@ -314,6 +316,21 @@ function calculatePipeline() {
 function applyFilters() {
   const sectorFilter = document.getElementById("sectorFilter").value;
   const classificationFilter = document.getElementById("classificationFilter").value;
+
+  document.querySelectorAll(".stage").forEach(stage => {
+    const stageName = stage.dataset.stage;
+
+    if (classificationFilter === "Lite") {
+      const showLiteStage =
+        stageName === "Qualify" ||
+        stageName === "Convert" ||
+        stageName === "Deliver";
+
+      stage.style.display = showLiteStage ? "flex" : "none";
+    } else {
+      stage.style.display = "flex";
+    }
+  });
 
   document.querySelectorAll(".card").forEach(card => {
     const sectorMatch = sectorFilter === "All" || card.dataset.sector === sectorFilter;
