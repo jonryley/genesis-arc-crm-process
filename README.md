@@ -76,7 +76,7 @@ Classification drives:
 
 Full definitions:
 
-[View Opportunity Classification](CLASSIFICATION.md)
+[Opportunity Classification](CLASSIFICATION.md)
 
 ---
 ## What Summit Does
