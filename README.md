@@ -41,6 +41,7 @@ It ensures opportunities move based on evidence, not optimism.
 - [Services](SERVICES.md/)
 - [Summit Operating Model](OPERATING-MODEL.md)
 - [Operating Controls](OPERATING-CONTROLS.md)
+- [Opportunity Classification](CLASSIFICATION.md)
 - [Stage Definitions](stages/)
 - [Gate Definitions](gates/)
 ---
@@ -60,7 +61,24 @@ They have:
 Summit fixes this.
 
 ---
+## Opportunity Classification
 
+Summit classifies opportunities to determine the level of governance required.
+
+Lite → Standard → Strategic → Complex → Transformational
+
+Classification drives:
+
+- Level of governance  
+- Depth of controls  
+- Gate rigor  
+- Review cadence  
+
+Full definitions:
+
+[View Opportunity Classification](CLASSIFICATION.md)
+
+---
 ## What Summit Does
 
 Summit introduces a stage driven lifecycle that ensures:
