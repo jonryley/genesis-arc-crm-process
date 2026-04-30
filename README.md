@@ -38,6 +38,7 @@ It ensures opportunities move based on evidence, not optimism.
 ## Explore Summit
 
 - [Interactive Pipeline](https://jonryley.github.io/summit-growth-engine/)
+- [Summit Overview](OVERVIEW.md)
 - [Services](SERVICES.md/)
 - [Summit Operating Model](OPERATING-MODEL.md)
 - [Operating Controls](OPERATING-CONTROLS.md)
