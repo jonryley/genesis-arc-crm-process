@@ -4,7 +4,7 @@
   <img src="/images/Summit%20logo%20alpha.png" alt="Summit Logo" width="240"/>
 </p>
 
-# Gate 2 Value Gate
+# Gate 2 Shape Gate
 
 ## Purpose
 
