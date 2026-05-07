@@ -4,7 +4,7 @@
   <img src="/images/Summit%20logo%20alpha.png" alt="Summit Logo" width="240"/>
 </p>
 
-# Stage 2 Value
+# Stage 2 Shape
 
 ## Objective
 
