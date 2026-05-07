@@ -21,7 +21,7 @@ Decide whether the opportunity should receive focused time and resource.
 
 ## Decision Options
 
-- Progress to Value
+- Progress to Stape Stage 
 - Hold
 - Rework
 - Stop
