@@ -279,7 +279,7 @@ Summit helps organisations create:
 ## Summit in Practice
 
 <p align="center">
-  <img src="images/GAGBL.png" alt="Summit Gated Business Lifecycle" width="900"/>
+  <img src="images/SGBL.png" alt="Summit Gated Business Lifecycle" width="900"/>
 </p>
 
 ---
