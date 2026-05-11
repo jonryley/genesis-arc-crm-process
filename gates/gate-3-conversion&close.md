@@ -8,20 +8,47 @@
 
 ## Purpose
 
-Decide whether the opportunity is closeable with acceptable risk.
+Decide whether the opportunity is closeable, commercially acceptable, operationally deliverable, and aligned to governance requirements.
 
-## Pass Criteria
+## Gate Criteria
 
-- Buying process is understood
-- Decision maker or signing authority is clear
-- Proposal and commercials are aligned
-- Competitive risks are known
-- Close plan is active
-- Internal approval position is clear
+- The buying and approval process is understood
+- Decision makers and signing authority are identified
+- Proposal, solution, and commercials are aligned
+- Commercial and contractual risks are understood
+- Competitive position and threats are visible
+- A realistic close plan is active
+- Delivery and operational alignment exists
+- Internal approvals and governance position are clear
+
+## Governance Questions
+
+- Do we understand how the customer will make the decision?
+- Is executive sponsorship or signing authority confirmed?
+- Are commercials and contractual terms acceptable?
+- Are risks visible, understood, and manageable?
+- Is the opportunity realistically closeable?
+- Are delivery teams aligned and prepared?
+- Does this meet governance and approval standards?
 
 ## Decision Options
 
-- Progress to Deliver
-- Hold
-- Rework
-- Stop
+- Progress to Stage 4 Deliver
+- Hold pending further information
+- Rework conversion strategy or commercial position
+- Stop and close
+
+## Gate Outcome
+
+- Approved opportunities progress into delivery mobilisation and customer onboarding
+- Held opportunities remain under active review
+- Rework opportunities require further negotiation, alignment, or risk reduction
+- Rejected opportunities are closed or archived
+
+## Leadership Test
+
+This is where forecasting credibility and commercial discipline are proven.
+
+Strong organisations only forecast opportunities that are genuinely closeable, commercially sound, and operationally deliverable.
+
+Poor conversion governance creates missed forecasts, weak margins, delivery issues, and loss of trust in the pipeline.
