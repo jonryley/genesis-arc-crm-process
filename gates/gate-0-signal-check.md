@@ -4,21 +4,53 @@
   <img src="/images/Summit%20logo%20alpha.png" alt="Summit Logo" width="240"/>
 </p>
 
-# Gate 0 Signal Check
+# Stage 0 Signal
 
-## Purpose
+## Objective
 
-Decide whether the initial signal is strong enough to justify formal qualification.
+Identify whether a credible commercial signal exists that may justify further engagement.
 
-## Pass Criteria
+## Typical Inputs
 
-- The account or market context is identified
-- The signal is linked to a credible problem, event, or need
-- There is a potential path to engagement
-- An owner is assigned
+- Client contact
+- Inbound enquiry
+- Referral
+- Market event
+- Strategic account insight
+- Contract expiry
+- Operational pain point
+- Executive conversation
 
-## Decision Options
+## Activities
 
-- Progress to Qualify
-- Hold for more information
-- Stop
+- Capture the initial signal
+- Identify the account or market context
+- Record the source of the signal
+- Assess whether a real problem, trigger, or opportunity may exist
+- Identify potential stakeholders or buying context
+- Assign an owner for next action
+
+## Required Outputs
+
+- Opportunity or lead created
+- Initial summary recorded
+- Account context identified
+- Named owner assigned
+- Initial next action agreed
+
+## Entry Criteria
+
+- A credible signal has been identified
+- There is an identifiable organisation, market, or buying context
+
+## Exit Criteria
+
+- Sufficient evidence exists to justify formal qualification
+
+## Key Questions
+
+- What triggered the signal?
+- Why now?
+- What problem or opportunity may exist?
+- Who could be impacted or involved?
+- Is this aligned to our market, capability, and strategy?
