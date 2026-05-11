@@ -8,20 +8,47 @@
 
 ## Purpose
 
-Decide whether the value case is strong enough to move towards conversion.
+Decide whether the customer value case is strong enough to justify formal commercial pursuit and conversion activity.
 
-## Pass Criteria
+## Gate Criteria
 
-- Customer need is clearly defined
-- Value proposition is relevant
-- Commercial logic is credible
-- Key stakeholders are understood
-- Differentiation is clear
-- Risks and assumptions are visible
+- The customer problem and desired outcomes are clearly understood
+- The value proposition is relevant and credible
+- The commercial and economic logic is understood
+- The proposed solution direction is viable
+- Key stakeholders and buying dynamics are identified
+- Differentiation is clear and meaningful
+- Risks, assumptions, and dependencies are visible
+- Internal capability and commitment exist to pursue
+
+## Governance Questions
+
+- Do we understand the customer problem and business drivers?
+- Is the value proposition compelling?
+- Is there a credible commercial case?
+- Are we differentiated in a meaningful way?
+- Do we understand the buying process and stakeholders?
+- Are the risks acceptable and manageable?
+- Is this opportunity strong enough to justify formal pursuit?
 
 ## Decision Options
 
-- Progress to Pursue Stage 
-- Hold
-- Rework
-- Stop
+- Progress to Stage 3 Convert
+- Hold pending further information
+- Rework value shaping
+- Stop and close
+
+## Gate Outcome
+
+- Approved opportunities progress into formal pursuit, proposal, bid, or conversion activity
+- Held opportunities remain under review
+- Rework opportunities require further shaping and stakeholder engagement
+- Rejected opportunities are closed or archived
+
+## Leadership Test
+
+This is where opportunity quality and strategic focus are tested.
+
+Strong organisations pursue opportunities where customer value, commercial logic, differentiation, and delivery confidence are aligned.
+
+Weak pursuit decisions create wasted bid effort, poor forecasting, and avoidable delivery risk.
