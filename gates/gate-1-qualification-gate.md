@@ -4,30 +4,57 @@
   <img src="/images/Summit%20logo%20alpha.png" alt="Summit Logo" width="240"/>
 </p>
 
-# Gate 1 Qualification Gate
+# Stage 1 Qualify
 
-## Purpose
+## Objective
 
-Decide whether the opportunity should receive focused time and resource.
+Determine whether the opportunity is real, commercially viable, strategically aligned, winnable, and deliverable.
 
-## Pass Criteria
+## Typical Inputs
 
-- Customer problem is credible
-- Buyer or stakeholder access exists
-- Commercial potential is meaningful
-- Timing is plausible
-- We have a reasonable chance to win
-- We believe we can deliver successfully
+- Approved Stage 0 signal
+- Initial customer discussions
+- Stakeholder insight
+- Account intelligence
+- Market context
+- Existing relationship history
 
-## Decision Options
+## Activities
 
-- Progress to Stape Stage 
-- Hold
-- Rework
-- Stop
+- Clarify the customer problem or need
+- Identify stakeholders, influencers, and decision makers
+- Assess timing, urgency, and drivers
+- Estimate commercial potential
+- Assess strategic alignment
+- Evaluate solution fit
+- Assess delivery confidence and operational capability
+- Evaluate competitive position and likelihood of success
+- Define the initial win strategy
 
-## Leadership Test
+## Required Outputs
 
-This is the point where discipline matters most.
+- Qualified opportunity record
+- Qualification summary completed
+- Stakeholder map initiated
+- Initial win strategy defined
+- Indicative value and timing understood
+- Recommendation to progress, hold, rework, or stop
 
-A weak opportunity should not be allowed to consume strong resource.
+## Entry Criteria
+
+- Stage 0 Signal approved
+- Account and opportunity context identified
+- Initial engagement or access exists
+
+## Exit Criteria
+
+- Sufficient qualification evidence exists to justify formal value development and opportunity shaping
+
+## Key Questions
+
+- Is it real?
+- Is it worth pursuing?
+- Can we win it?
+- Can we deliver successfully?
+- Is there urgency or a compelling event?
+- Is this strategically aligned?
