@@ -6,55 +6,246 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body{margin:0;font-family:Arial,sans-serif;background:#0b0b0b;color:white}
-.header{padding:15px 30px;border-bottom:1px solid #222;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-.header-left{display:flex;align-items:center;gap:15px}
-.logo{height:40px}
-.header h1{color:#d4af37;margin:0;font-size:20px}
-.metrics{display:flex;gap:20px;flex-wrap:wrap}
-.metric{color:#d4af37;font-size:14px}
-.container{padding:20px}
-.dashboard{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:18px}
-.dash-card{background:#111;border:1px solid #222;border-radius:6px;padding:12px}
-.dash-title{color:#d4af37;font-size:13px;margin-bottom:6px}
-.dash-value{font-size:12px;color:#aaa;line-height:1.6}
-.filters{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
-.filter-group{display:flex;flex-direction:column;gap:6px}
-.filter-group label{font-size:12px;color:#aaa}
-.filter-group select{background:#111;color:#fff;border:1px solid #333;padding:8px 10px;border-radius:4px}
-.pipeline{display:flex;gap:15px;overflow-x:auto;align-items:flex-start;padding-bottom:10px;justify-content:flex-start}
-.stage{background:#111;border:1px solid #222;min-width:310px;display:flex;flex-direction:column;border-radius:6px}
-.stage.drag-over{border-color:#d4af37;box-shadow:0 0 0 1px #d4af37 inset}
-.stage-header{padding:12px;border-bottom:1px solid #222;background:#0f0f0f}
-.stage-title{font-weight:bold;color:#d4af37}
-.stage-value{font-size:12px;color:#888;margin-top:4px;line-height:1.5}
-.stage-body{padding:10px;min-height:360px}
-.card{background:#1a1a1a;border:1px solid #333;padding:12px;margin-bottom:10px;cursor:grab;border-radius:4px;transition:all .2s}
-.card:hover{border-color:#d4af37;transform:translateY(-2px)}
-.card.dragging{opacity:.55}
-.card.hidden{display:none}
-.card-title{font-weight:bold;margin-bottom:6px;font-size:14px}
-.tag{color:#0b0b0b;background:#d4af37;padding:2px 6px;border-radius:10px;font-size:11px;margin-left:4px;font-weight:normal}
-.card-value,.card-date,.card-status,.card-meta{font-size:12px}
-.card-value{color:#aaa}
-.card-date{color:#888}
-.card-status{color:#d4af37;margin-top:4px}
-.card-meta{color:#999;margin-top:6px;line-height:1.5}
-.green{border-left:4px solid #2ecc71}
-.amber{border-left:4px solid #f39c12}
-.red{border-left:4px solid #e74c3c}
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:1000}
-.modal-content{background:#111;margin:5% auto;padding:30px;width:90%;max-width:680px;border:1px solid #333;border-radius:6px}
-.close{float:right;font-size:18px;cursor:pointer;color:#d4af37}
-a{color:#d4af37}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#0b0b0b;
+  color:white;
+}
+
+.header{
+  padding:15px 30px;
+  border-bottom:1px solid #222;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.header-left{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.logo{
+  height:40px;
+}
+
+.header h1{
+  color:#d4af37;
+  margin:0;
+  font-size:20px;
+}
+
+.metrics{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.metric{
+  color:#d4af37;
+  font-size:14px;
+}
+
+.container{
+  padding:20px;
+}
+
+.dashboard{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:12px;
+  margin-bottom:18px;
+}
+
+.dash-card{
+  background:#111;
+  border:1px solid #222;
+  border-radius:6px;
+  padding:12px;
+}
+
+.dash-title{
+  color:#d4af37;
+  font-size:13px;
+  margin-bottom:8px;
+}
+
+.dash-value{
+  font-size:12px;
+  color:#aaa;
+  line-height:1.6;
+}
+
+.filters{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:18px;
+}
+
+.filter-group{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.filter-group label{
+  font-size:12px;
+  color:#aaa;
+}
+
+.filter-group select{
+  background:#111;
+  color:#fff;
+  border:1px solid #333;
+  padding:8px 10px;
+  border-radius:4px;
+}
+
+.pipeline{
+  display:flex;
+  gap:15px;
+  overflow-x:auto;
+  align-items:flex-start;
+  padding-bottom:10px;
+  justify-content:flex-start;
+}
+
+.stage{
+  background:#111;
+  border:1px solid #222;
+  min-width:320px;
+  display:flex;
+  flex-direction:column;
+  border-radius:6px;
+}
+
+.stage-header{
+  padding:12px;
+  border-bottom:1px solid #222;
+  background:#0f0f0f;
+}
+
+.stage-title{
+  font-weight:bold;
+  color:#d4af37;
+}
+
+.stage-value{
+  font-size:12px;
+  color:#888;
+  margin-top:4px;
+  line-height:1.5;
+}
+
+.stage-body{
+  padding:10px;
+  min-height:420px;
+}
+
+.card{
+  background:#1a1a1a;
+  border:1px solid #333;
+  padding:12px;
+  margin-bottom:10px;
+  border-radius:4px;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.card:hover{
+  border-color:#d4af37;
+  transform:translateY(-2px);
+}
+
+.card.hidden{
+  display:none;
+}
+
+.card-title{
+  font-size:14px;
+  margin-bottom:6px;
+  font-weight:bold;
+}
+
+.tag{
+  color:#0b0b0b;
+  background:#d4af37;
+  padding:2px 6px;
+  border-radius:10px;
+  font-size:11px;
+  margin-left:4px;
+  font-weight:normal;
+}
+
+.card-value{
+  font-size:12px;
+  color:#aaa;
+}
+
+.card-date{
+  font-size:12px;
+  color:#888;
+}
+
+.card-status{
+  font-size:12px;
+  color:#d4af37;
+  margin-top:4px;
+}
+
+.card-meta{
+  font-size:11px;
+  color:#999;
+  margin-top:6px;
+  line-height:1.5;
+}
+
+.green{border-left:4px solid #2ecc71;}
+.amber{border-left:4px solid #f39c12;}
+.red{border-left:4px solid #e74c3c;}
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.92);
+  z-index:1000;
+}
+
+.modal-content{
+  background:#111;
+  margin:5% auto;
+  padding:30px;
+  width:90%;
+  max-width:680px;
+  border:1px solid #333;
+  border-radius:6px;
+}
+
+.close{
+  float:right;
+  cursor:pointer;
+  color:#d4af37;
+  font-size:18px;
+}
+
+a{
+  color:#d4af37;
+}
 </style>
 </head>
 
 <body>
 
 <div class="header">
+
   <div class="header-left">
-    <img src="images/JR%20LOGO%20white.png" class="logo" alt="JR Logo">
+    <img src="images/JR%20LOGO%20white.png" class="logo">
     <div>
       <h1>Summit Pipeline</h1>
       <div style="color:#888;font-size:13px;">Gated Business Lifecycle</div>
@@ -65,30 +256,34 @@ a{color:#d4af37}
     <div class="metric" id="totalPipeline">Total Pipeline: £0</div>
     <div class="metric" id="weightedPipeline">Expected Revenue Forecast: £0</div>
   </div>
+
 </div>
 
 <div class="container">
 
   <div class="dashboard">
+
     <div class="dash-card">
       <div class="dash-title">Pipeline Mix</div>
-      <div class="dash-value" id="pipelineMix">-</div>
+      <div class="dash-value" id="pipelineMix"></div>
     </div>
 
     <div class="dash-card">
       <div class="dash-title">Conversion by Classification</div>
-      <div class="dash-value" id="classificationConversion">-</div>
+      <div class="dash-value" id="classificationConversion"></div>
     </div>
 
     <div class="dash-card">
       <div class="dash-title">Expected Revenue Forecast</div>
-      <div class="dash-value" id="expectedForecast">£0</div>
+      <div class="dash-value" id="expectedForecast"></div>
     </div>
+
   </div>
 
   <div class="filters">
+
     <div class="filter-group">
-      <label for="sectorFilter">Sector</label>
+      <label>Sector</label>
       <select id="sectorFilter">
         <option value="All">All</option>
         <option value="Rail">Rail</option>
@@ -97,7 +292,7 @@ a{color:#d4af37}
     </div>
 
     <div class="filter-group">
-      <label for="classificationFilter">Classification</label>
+      <label>Classification</label>
       <select id="classificationFilter">
         <option value="All">All</option>
         <option value="Lite">Lite</option>
@@ -107,13 +302,16 @@ a{color:#d4af37}
         <option value="Transformational">Transformational</option>
       </select>
     </div>
+
   </div>
 
   <div class="pipeline" id="pipeline"></div>
+
 </div>
 
 <div id="modal" class="modal">
   <div class="modal-content">
+
     <span class="close" onclick="closeModal()">X</span>
 
     <h2 id="title"></h2>
@@ -137,328 +335,384 @@ a{color:#d4af37}
     <a id="stageLink" href="#" target="_blank">View Stage Definition</a>
     <br><br>
     <a id="gateLink" href="#" target="_blank">View Gate</a>
+
   </div>
 </div>
 
 <script>
-let draggedCard = null;
 
 const stages = [
-  {name:"Signal",weight:0.10,status:"Opportunity identified",stageUrl:"https://github.com/jonryley/summit-growth-engine/blob/main/stages/stage-0-signal.md",gateUrl:"https://github.com/jonryley/summit-growth-engine/blob/main/gates/gate-0-signal-check.md"},
-  {name:"Qualify",weight:0.25,status:"In qualification",stageUrl:"https://github.com/jonryley/summit-growth-engine/blob/main/stages/stage-1-qualify.md",gateUrl:"https://github.com/jonryley/summit-growth-engine/blob/main/gates/gate-1-qualification-gate.md"},
-  {name:"Value",weight:0.50,status:"Value defined",stageUrl:"https://github.com/jonryley/summit-growth-engine/blob/main/stages/stage-2-value.md",gateUrl:"https://github.com/jonryley/summit-growth-engine/blob/main/gates/gate-2-value-gate.md"},
-  {name:"Convert",weight:0.75,status:"Proposal and close",stageUrl:"https://github.com/jonryley/summit-growth-engine/blob/main/stages/stage-3-convert.md",gateUrl:"https://github.com/jonryley/summit-growth-engine/blob/main/gates/gate-3-conversion-gate.md"},
-  {name:"Deliver",weight:1.00,status:"In delivery",stageUrl:"https://github.com/jonryley/summit-growth-engine/blob/main/stages/stage-4-deliver.md",gateUrl:"https://github.com/jonryley/summit-growth-engine/blob/main/gates/gate-4-delivery-readiness-gate.md"},
-  {name:"Amplify",weight:1.00,status:"Scaling",stageUrl:"https://github.com/jonryley/summit-growth-engine/blob/main/stages/stage-5-amplify.md",gateUrl:"https://github.com/jonryley/summit-growth-engine/blob/main/gates/gate-5-growth-gate.md"}
+
+{
+name:"Signal",
+weight:0.10,
+status:"Opportunity identified",
+stageUrl:"https://github.com/jonryley/summit-growth-engine/blob/main/stages/stage-0-signal.md",
+gateUrl:"https://github.com/jonryley/summit-growth-engine/blob/main/gates/gate-0-signal-check.md"
+},
+
+{
+name:"Qualify",
+weight:0.25,
+status:"In qualification",
+stageUrl:"https://github.com/jonryley/summit-growth-engine/blob/main/stages/stage-1-qualify.md",
+gateUrl:"https://github.com/jonryley/summit-growth-engine/blob/main/gates/gate-1-qualification-gate.md"
+},
+
+{
+name:"Value",
+weight:0.50,
+status:"Value defined",
+stageUrl:"https://github.com/jonryley/summit-growth-engine/blob/main/stages/stage-2-shape.md",
+gateUrl:"https://github.com/jonryley/summit-growth-engine/blob/main/gates/gate-2-shape-gate.md"
+},
+
+{
+name:"Convert",
+weight:0.75,
+status:"Proposal and close",
+stageUrl:"https://github.com/jonryley/summit-growth-engine/blob/main/stages/stage-3-pursue.md",
+gateUrl:"https://github.com/jonryley/summit-growth-engine/blob/main/gates/gate-3-conversion%26close.md"
+},
+
+{
+name:"Deliver",
+weight:1.00,
+status:"In delivery",
+stageUrl:"https://github.com/jonryley/summit-growth-engine/blob/main/stages/stage-4-deliver.md",
+gateUrl:"https://github.com/jonryley/summit-growth-engine/blob/main/gates/gate-4-delivery-and-Value-Realisation-gate.md"
+},
+
+{
+name:"Amplify",
+weight:1.00,
+status:"Scaling",
+stageUrl:"https://github.com/jonryley/summit-growth-engine/blob/main/stages/stage-5-amplify.md",
+gateUrl:"https://github.com/jonryley/summit-growth-engine/blob/main/gates/gate-5-growth-gate.md"
+}
+
 ];
 
 const opportunities = [
-  ["Signal","Metro Rail","Rail",350000,"Strategic","Consultancy","Pass","In Progress","On Track","30 Jun 2026","amber"],
-  ["Signal","Moores Energy","Energy",420000,"Strategic","Licence","Pass","In Progress","On Track","15 Jul 2026","amber"],
-  ["Signal","Northern Grid Energy","Energy",500000,"Strategic","Upgrade","Pass","In Progress","On Track","01 Aug 2026","amber"],
-  ["Signal","Crown Rail Systems","Rail",375000,"Strategic","Consultancy","Pass","In Progress","On Track","12 Aug 2026","amber"],
-  ["Signal","Velocity Rail Group","Rail",650000,"Strategic","Consultancy","Pass","Not Started","On Track","05 Sep 2026","amber"],
-  ["Signal","Helios Energy","Energy",720000,"Strategic","Licence","Pass","Not Started","On Track","12 Sep 2026","amber"],
-  ["Signal","Trackline Services","Rail",280000,"Standard","Consultancy","Pass","Not Started","On Track","18 Aug 2026","amber"],
-  ["Signal","GreenGrid Energy","Energy",320000,"Standard","Upgrade","Pass","Not Started","On Track","22 Aug 2026","amber"],
 
-  ["Qualify","Summit Rail Partners","Rail",850000,"Complex","Licence","Pass","In Progress","On Track","20 Jul 2026","green"],
-  ["Qualify","Beacon Energy Group","Energy",950000,"Complex","Upgrade","Pass","In Progress","On Track","10 Aug 2026","amber"],
-  ["Qualify","Apex Energy Services","Energy",1200000,"Complex","Consultancy","Pass","In Progress","Watch","25 Aug 2026","green"],
-  ["Qualify","Platform Rail Alliance","Rail",1050000,"Complex","Licence","Pass","In Progress","On Track","05 Sep 2026","amber"],
-  ["Qualify","Core Rail Systems","Rail",350000,"Standard","Consultancy","Pass","In Progress","On Track","10 Sep 2026","green"],
-  ["Qualify","Northwind Energy","Energy",420000,"Standard","Licence","Pass","In Progress","On Track","15 Sep 2026","amber"],
-  ["Qualify","Lumen Energy Lite","Energy",50000,"Lite","Pilot","Pass","Not Started","On Track","18 Oct 2026","green"],
-  ["Qualify","Bridgeway Rail Lite","Rail",50000,"Lite","Pilot","Pass","Not Started","On Track","22 Oct 2026","green"],
+["Signal","Metro Rail","Rail",350000,"Strategic","Consultancy","Pass","In Progress","On Track","30 Jun 2026","amber"],
+["Signal","Moores Energy","Energy",420000,"Strategic","Licence","Pass","In Progress","On Track","15 Jul 2026","amber"],
+["Signal","Northern Grid Energy","Energy",500000,"Strategic","Upgrade","Pass","In Progress","On Track","01 Aug 2026","amber"],
+["Signal","Crown Rail Systems","Rail",375000,"Strategic","Consultancy","Pass","In Progress","On Track","12 Aug 2026","amber"],
+["Signal","Velocity Rail Group","Rail",650000,"Strategic","Consultancy","Pass","Not Started","On Track","05 Sep 2026","amber"],
+["Signal","Helios Energy","Energy",720000,"Strategic","Licence","Pass","Not Started","On Track","12 Sep 2026","amber"],
+["Signal","Trackline Services","Rail",280000,"Standard","Consultancy","Pass","Not Started","On Track","18 Aug 2026","amber"],
+["Signal","GreenGrid Energy","Energy",320000,"Standard","Upgrade","Pass","Not Started","On Track","22 Aug 2026","amber"],
 
-  ["Value","Pioneer Rail","Rail",1500000,"Complex","Consultancy","Pass","In Progress","On Track","15 Sep 2026","green"],
-  ["Value","Dunstone Energy","Energy",1800000,"Transformational","Licence","Pass","In Progress","On Track","30 Sep 2026","green"],
-  ["Value","Harbour Rail","Rail",1300000,"Complex","Upgrade","Pass","In Progress","Watch","10 Oct 2026","amber"],
-  ["Value","Alliance Rail","Rail",480000,"Standard","Upgrade","Pass","In Progress","On Track","20 Oct 2026","green"],
-  ["Value","Everlight Energy","Energy",520000,"Standard","Consultancy","Pass","In Progress","On Track","28 Oct 2026","amber"],
+["Qualify","Summit Rail Partners","Rail",850000,"Complex","Licence","Pass","In Progress","On Track","20 Jul 2026","green"],
+["Qualify","Beacon Energy Group","Energy",950000,"Complex","Upgrade","Pass","In Progress","On Track","10 Aug 2026","amber"],
+["Qualify","Apex Energy Services","Energy",1200000,"Complex","Consultancy","Pass","In Progress","Watch","25 Aug 2026","green"],
+["Qualify","Platform Rail Alliance","Rail",1050000,"Complex","Licence","Pass","In Progress","On Track","05 Sep 2026","amber"],
+["Qualify","Core Rail Systems","Rail",350000,"Standard","Consultancy","Pass","In Progress","On Track","10 Sep 2026","green"],
+["Qualify","Northwind Energy","Energy",420000,"Standard","Licence","Pass","In Progress","On Track","15 Sep 2026","amber"],
+["Qualify","Lumen Energy Lite","Energy",50000,"Lite","Pilot","Pass","Not Started","On Track","18 Oct 2026","green"],
+["Qualify","Bridgeway Rail Lite","Rail",50000,"Lite","Pilot","Pass","Not Started","On Track","22 Oct 2026","green"],
 
-  ["Convert","Westline Rail","Rail",900000,"Complex","Consultancy","Pass","In Progress","On Track","31 Jul 2026","amber"],
-  ["Convert","Orion Energy","Energy",1100000,"Complex","Licence","Pass","In Progress","On Track","15 Aug 2026","green"],
-  ["Convert","MetroLink Rail","Rail",850000,"Complex","Upgrade","Pass","In Progress","Watch","01 Sep 2026","amber"],
-  ["Convert","Prime Rail Solutions","Rail",450000,"Standard","Consultancy","Pass","In Progress","On Track","10 Sep 2026","green"],
-  ["Convert","Vertex Energy","Energy",550000,"Standard","Licence","Pass","In Progress","On Track","18 Sep 2026","amber"],
-  ["Convert","Moores Energy Lite","Energy",50000,"Lite","Pilot","Pass","In Progress","On Track","31 Oct 2026","green"],
-  ["Convert","Metro Rail Lite","Rail",50000,"Lite","Pilot","Pass","In Progress","On Track","05 Nov 2026","green"],
+["Value","Pioneer Rail","Rail",1500000,"Complex","Consultancy","Pass","In Progress","On Track","15 Sep 2026","green"],
+["Value","Dunstone Energy","Energy",1800000,"Transformational","Licence","Pass","In Progress","On Track","30 Sep 2026","green"],
+["Value","Harbour Rail","Rail",1300000,"Complex","Upgrade","Pass","In Progress","Watch","10 Oct 2026","amber"],
+["Value","Alliance Rail","Rail",480000,"Standard","Upgrade","Pass","In Progress","On Track","20 Oct 2026","green"],
+["Value","Everlight Energy","Energy",520000,"Standard","Consultancy","Pass","In Progress","On Track","28 Oct 2026","amber"],
 
-  ["Deliver","Keystone Rail","Rail",2000000,"Transformational","Licence","Pass","In Progress","On Track","30 Sep 2026","green"],
-  ["Deliver","Atlas Energy","Energy",1700000,"Transformational","Consultancy","Pass","In Progress","On Track","10 Oct 2026","green"],
-  ["Deliver","Sovereign Energy","Energy",2500000,"Transformational","Upgrade","Pass","In Progress","On Track","30 Oct 2026","green"],
-  ["Deliver","Northstar Rail","Rail",2200000,"Transformational","Licence","Pass","In Progress","On Track","05 Nov 2026","green"],
-  ["Deliver","Summit Rail Delivery","Rail",600000,"Standard","Upgrade","Pass","In Progress","On Track","05 Nov 2026","green"],
-  ["Deliver","Pulse Energy Services","Energy",650000,"Standard","Consultancy","Pass","In Progress","On Track","12 Nov 2026","green"],
-  ["Deliver","Peak Energy Lite","Energy",50000,"Lite","Pilot","Pass","Not Started","On Track","12 Nov 2026","green"],
-  ["Deliver","Signal Rail Lite","Rail",50000,"Lite","Pilot","Pass","Not Started","On Track","15 Nov 2026","green"],
+["Convert","Westline Rail","Rail",900000,"Complex","Consultancy","Pass","In Progress","On Track","31 Jul 2026","amber"],
+["Convert","Orion Energy","Energy",1100000,"Complex","Licence","Pass","In Progress","On Track","15 Aug 2026","green"],
+["Convert","MetroLink Rail","Rail",850000,"Complex","Upgrade","Pass","In Progress","Watch","01 Sep 2026","amber"],
+["Convert","Prime Rail Solutions","Rail",450000,"Standard","Consultancy","Pass","In Progress","On Track","10 Sep 2026","green"],
+["Convert","Vertex Energy","Energy",550000,"Standard","Licence","Pass","In Progress","On Track","18 Sep 2026","amber"],
+["Convert","Moores Energy Lite","Energy",50000,"Lite","Pilot","Pass","In Progress","On Track","31 Oct 2026","green"],
+["Convert","Metro Rail Lite","Rail",50000,"Lite","Pilot","Pass","In Progress","On Track","05 Nov 2026","green"],
 
-  ["Amplify","Vanguard Rail","Rail",3000000,"Transformational","Licence","Pass","Complete","On Track","31 Dec 2026","green"],
-  ["Amplify","Titan Energy","Energy",4000000,"Transformational","Licence","Pass","Complete","On Track","31 Dec 2026","green"],
-  ["Amplify","National Rail Growth","Rail",3500000,"Transformational","Upgrade","Pass","Complete","On Track","31 Dec 2026","green"],
-  ["Amplify","Rail Growth Programme","Rail",900000,"Standard","Licence","Pass","Scaling","On Track","31 Dec 2026","green"],
-  ["Amplify","Energy Optimisation Rollout","Energy",1000000,"Standard","Upgrade","Pass","Scaling","On Track","31 Dec 2026","green"]
+["Deliver","Keystone Rail","Rail",2000000,"Transformational","Licence","Pass","In Progress","On Track","30 Sep 2026","green"],
+["Deliver","Atlas Energy","Energy",1700000,"Transformational","Consultancy","Pass","In Progress","On Track","10 Oct 2026","green"],
+["Deliver","Sovereign Energy","Energy",2500000,"Transformational","Upgrade","Pass","In Progress","On Track","30 Oct 2026","green"],
+["Deliver","Northstar Rail","Rail",2200000,"Transformational","Licence","Pass","In Progress","On Track","05 Nov 2026","green"],
+["Deliver","Summit Rail Delivery","Rail",600000,"Standard","Upgrade","Pass","In Progress","On Track","05 Nov 2026","green"],
+["Deliver","Pulse Energy Services","Energy",650000,"Standard","Consultancy","Pass","In Progress","On Track","12 Nov 2026","green"],
+["Deliver","Peak Energy Lite","Energy",50000,"Lite","Pilot","Pass","Not Started","On Track","12 Nov 2026","green"],
+["Deliver","Signal Rail Lite","Rail",50000,"Lite","Pilot","Pass","Not Started","On Track","15 Nov 2026","green"],
+
+["Amplify","Vanguard Rail","Rail",3000000,"Transformational","Licence","Pass","Complete","On Track","31 Dec 2026","green"],
+["Amplify","Titan Energy","Energy",4000000,"Transformational","Licence","Pass","Complete","On Track","31 Dec 2026","green"],
+["Amplify","National Rail Growth","Rail",3500000,"Transformational","Upgrade","Pass","Complete","On Track","31 Dec 2026","green"],
+["Amplify","Rail Growth Programme","Rail",900000,"Standard","Licence","Pass","Scaling","On Track","31 Dec 2026","green"],
+["Amplify","Energy Optimisation Rollout","Energy",1000000,"Standard","Upgrade","Pass","Scaling","On Track","31 Dec 2026","green"]
+
 ];
 
-function formatMoney(value) {
-  if (value >= 1000000) return "£" + (value / 1000000).toFixed(1) + "M";
-  return "£" + value.toLocaleString();
+function formatMoney(value){
+if(value>=1000000)return "£"+(value/1000000).toFixed(1)+"M";
+return "£"+value.toLocaleString();
 }
 
-function getNextStepByStage(stageName) {
-  const map = {
-    "Signal": "Confirm signal and identify stakeholders",
-    "Qualify": "Complete qualification gate",
-    "Value": "Define value case and commercial outcome",
-    "Convert": "Agree close plan and proposal route",
-    "Deliver": "Move into structured delivery handover",
-    "Amplify": "Scale across accounts, sectors or business units"
-  };
-  return map[stageName] || "Review next step";
+function getNextStepByStage(stageName){
+
+const map={
+"Signal":"Confirm signal and identify stakeholders",
+"Qualify":"Complete qualification gate",
+"Value":"Define value case and commercial outcome",
+"Convert":"Agree close plan and proposal route",
+"Deliver":"Move into structured delivery handover",
+"Amplify":"Scale across accounts, sectors or business units"
+};
+
+return map[stageName]||"Review next step";
 }
 
-function renderPipeline() {
-  const pipeline = document.getElementById("pipeline");
-  pipeline.innerHTML = "";
+function renderPipeline(){
 
-  stages.forEach(stage => {
-    const stageEl = document.createElement("div");
-    stageEl.className = "stage";
-    stageEl.dataset.stage = stage.name;
-    stageEl.dataset.weight = stage.weight;
-    stageEl.dataset.status = stage.status;
-    stageEl.dataset.stageUrl = stage.stageUrl;
-    stageEl.dataset.gateUrl = stage.gateUrl;
+const pipeline=document.getElementById("pipeline");
+pipeline.innerHTML="";
 
-    stageEl.innerHTML = `
-      <div class="stage-header">
-        <div class="stage-title">${stage.name}</div>
-        <div class="stage-value" id="${stage.name.toLowerCase()}Total"></div>
-        <div class="stage-value">Conversion Rate: ${Math.round(stage.weight * 100)}%</div>
-      </div>
-      <div class="stage-body"></div>
-    `;
+stages.forEach(stage=>{
 
-    const body = stageEl.querySelector(".stage-body");
+const stageEl=document.createElement("div");
 
-    opportunities
-      .filter(o => o[0] === stage.name)
-      .forEach(o => {
-        const [stageName,title,sector,value,classification,offerType,gateReadiness,handover,reviewStatus,closeDate,colour] = o;
+stageEl.className="stage";
+stageEl.dataset.stage=stage.name;
+stageEl.dataset.weight=stage.weight;
+stageEl.dataset.status=stage.status;
+stageEl.dataset.stageUrl=stage.stageUrl;
+stageEl.dataset.gateUrl=stage.gateUrl;
 
-        const card = document.createElement("div");
-        card.className = `card ${colour}`;
-        card.draggable = true;
-        card.dataset.sector = sector;
-        card.dataset.value = value;
-        card.dataset.classification = classification;
-        card.dataset.offerType = offerType;
-        card.dataset.gateReadiness = gateReadiness;
-        card.dataset.handover = handover;
-        card.dataset.reviewStatus = reviewStatus;
-        card.dataset.close = closeDate;
+stageEl.innerHTML=`
+<div class="stage-header">
+<div class="stage-title">${stage.name}</div>
+<div class="stage-value" id="${stage.name.toLowerCase()}Total"></div>
+<div class="stage-value">Conversion Rate: ${Math.round(stage.weight*100)}%</div>
+</div>
+<div class="stage-body"></div>
+`;
 
-        card.innerHTML = `
-          <div class="card-title">${title} <span class="tag">(${offerType})</span></div>
-          <div class="card-value">Value: ${formatMoney(value)}</div>
-          <div class="card-date">Close: ${closeDate}</div>
-          <div class="card-status">Status: ${stage.status}</div>
-          <div class="card-meta">
-            Sector: ${sector}<br>
-            Classification: ${classification}
-          </div>
-        `;
+const body=stageEl.querySelector(".stage-body");
 
-        body.appendChild(card);
-      });
+opportunities
+.filter(o=>o[0]===stage.name)
+.forEach(o=>{
 
-    pipeline.appendChild(stageEl);
-  });
+const [stageName,title,sector,value,classification,offerType,gateReadiness,handover,reviewStatus,closeDate,colour]=o;
 
-  bindDragAndDrop();
-  bindCardEvents();
-  calculatePipeline();
+const card=document.createElement("div");
+
+card.className=`card ${colour}`;
+
+card.dataset.sector=sector;
+card.dataset.value=value;
+card.dataset.classification=classification;
+card.dataset.offerType=offerType;
+card.dataset.gateReadiness=gateReadiness;
+card.dataset.handover=handover;
+card.dataset.reviewStatus=reviewStatus;
+card.dataset.close=closeDate;
+
+card.innerHTML=`
+<div class="card-title">${title} <span class="tag">(${offerType})</span></div>
+<div class="card-value">Value: ${formatMoney(value)}</div>
+<div class="card-date">Close: ${closeDate}</div>
+<div class="card-status">Status: ${stage.status}</div>
+<div class="card-meta">
+Sector: ${sector}<br>
+Classification: ${classification}
+</div>
+`;
+
+card.onclick=()=>openModalFromCard(card);
+
+body.appendChild(card);
+
+});
+
+pipeline.appendChild(stageEl);
+
+});
+
+calculatePipeline();
 }
 
-function getStageMetaFromCard(card) {
-  const stage = card.closest(".stage");
-  return {
-    stageName: stage.dataset.stage,
-    stageUrl: stage.dataset.stageUrl,
-    gateUrl: stage.dataset.gateUrl,
-    stageStatus: stage.dataset.status
-  };
+function getStageMetaFromCard(card){
+
+const stage=card.closest(".stage");
+
+return{
+stageName:stage.dataset.stage,
+stageUrl:stage.dataset.stageUrl,
+gateUrl:stage.dataset.gateUrl,
+stageStatus:stage.dataset.status
+};
+
 }
 
-function openModalFromCard(card) {
-  const meta = getStageMetaFromCard(card);
+function openModalFromCard(card){
 
-  document.getElementById("modal").style.display = "block";
-  document.getElementById("title").innerText = card.querySelector(".card-title").innerText;
-  document.getElementById("value").innerText = formatMoney(Number(card.dataset.value));
-  document.getElementById("closeDate").innerText = card.dataset.close;
-  document.getElementById("status").innerText = meta.stageStatus;
-  document.getElementById("sector").innerText = card.dataset.sector;
-  document.getElementById("classification").innerText = card.dataset.classification;
-  document.getElementById("offerType").innerText = card.dataset.offerType;
-  document.getElementById("gateReadiness").innerText = card.dataset.gateReadiness;
-  document.getElementById("handover").innerText = card.dataset.handover;
-  document.getElementById("reviewStatus").innerText = card.dataset.reviewStatus;
-  document.getElementById("next").innerText = getNextStepByStage(meta.stageName);
-  document.getElementById("stageLink").href = meta.stageUrl;
-  document.getElementById("gateLink").href = meta.gateUrl;
+const meta=getStageMetaFromCard(card);
+
+document.getElementById("modal").style.display="block";
+
+document.getElementById("title").innerText=card.querySelector(".card-title").innerText;
+document.getElementById("value").innerText=formatMoney(Number(card.dataset.value));
+document.getElementById("closeDate").innerText=card.dataset.close;
+document.getElementById("status").innerText=meta.stageStatus;
+document.getElementById("sector").innerText=card.dataset.sector;
+document.getElementById("classification").innerText=card.dataset.classification;
+document.getElementById("offerType").innerText=card.dataset.offerType;
+document.getElementById("gateReadiness").innerText=card.dataset.gateReadiness;
+document.getElementById("handover").innerText=card.dataset.handover;
+document.getElementById("reviewStatus").innerText=card.dataset.reviewStatus;
+document.getElementById("next").innerText=getNextStepByStage(meta.stageName);
+
+document.getElementById("stageLink").href=meta.stageUrl;
+document.getElementById("gateLink").href=meta.gateUrl;
+
 }
 
-function closeModal() {
-  document.getElementById("modal").style.display = "none";
+function closeModal(){
+document.getElementById("modal").style.display="none";
 }
 
-function refreshCardStatuses() {
-  document.querySelectorAll(".card").forEach(card => {
-    const meta = getStageMetaFromCard(card);
-    card.querySelector(".card-status").innerText = "Status: " + meta.stageStatus;
-  });
+function calculatePipeline(){
+
+let total=0;
+let weighted=0;
+
+let classificationTotals={};
+let classificationWeighted={};
+
+const classificationOrder=[
+"Lite",
+"Standard",
+"Strategic",
+"Complex",
+"Transformational"
+];
+
+document.querySelectorAll(".stage").forEach(stage=>{
+
+if(stage.style.display==="none")return;
+
+const stageName=stage.dataset.stage.toLowerCase();
+const stageWeight=parseFloat(stage.dataset.weight)||0;
+
+let stageTotal=0;
+
+stage.querySelectorAll(".card:not(.hidden)").forEach(card=>{
+
+const val=parseFloat(card.dataset.value);
+const cls=card.dataset.classification;
+
+if(!isNaN(val)){
+
+total+=val;
+stageTotal+=val;
+weighted+=val*stageWeight;
+
+classificationTotals[cls]=(classificationTotals[cls]||0)+val;
+classificationWeighted[cls]=(classificationWeighted[cls]||0)+(val*stageWeight);
+
 }
 
-function calculatePipeline() {
-  let total = 0;
-  let weighted = 0;
-  let classificationTotals = {};
-  let classificationWeighted = {};
+});
 
-  const classificationOrder = [
-    "Lite",
-    "Standard",
-    "Strategic",
-    "Complex",
-    "Transformational"
-  ];
+const totalElement=document.getElementById(stageName+"Total");
 
-  document.querySelectorAll(".stage").forEach(stage => {
-    if (stage.style.display === "none") return;
-
-    const stageName = stage.dataset.stage.toLowerCase();
-    const stageWeight = parseFloat(stage.dataset.weight) || 0;
-    let stageTotal = 0;
-
-    stage.querySelectorAll(".card:not(.hidden)").forEach(card => {
-      const val = parseFloat(card.dataset.value);
-      const cls = card.dataset.classification;
-
-      if (!isNaN(val)) {
-        total += val;
-        stageTotal += val;
-        weighted += val * stageWeight;
-
-        classificationTotals[cls] = (classificationTotals[cls] || 0) + val;
-        classificationWeighted[cls] = (classificationWeighted[cls] || 0) + (val * stageWeight);
-      }
-    });
-
-    const totalElement = document.getElementById(stageName + "Total");
-    if (totalElement) {
-      totalElement.innerText = "Pipeline Value: £" + stageTotal.toLocaleString();
-    }
-  });
-
-  document.getElementById("totalPipeline").innerText = "Total Pipeline: £" + total.toLocaleString();
-  document.getElementById("weightedPipeline").innerText = "Expected Revenue Forecast: £" + Math.round(weighted).toLocaleString();
-  document.getElementById("expectedForecast").innerText = "Forecast: £" + Math.round(weighted).toLocaleString();
-
-  let mixHtml = "";
-  classificationOrder.forEach(cls => {
-    const clsTotal = classificationTotals[cls] || 0;
-    const pct = total ? Math.round((clsTotal / total) * 100) : 0;
-    mixHtml += `${cls}: ${pct}% (£${clsTotal.toLocaleString()})<br>`;
-  });
-  document.getElementById("pipelineMix").innerHTML = mixHtml || "-";
-
-  let convHtml = "";
-  classificationOrder.forEach(cls => {
-    const clsTotal = classificationTotals[cls] || 0;
-    const clsWeighted = classificationWeighted[cls] || 0;
-    const rate = clsTotal ? Math.round((clsWeighted / clsTotal) * 100) : 0;
-    convHtml += `${cls}: ${rate}% forecast confidence<br>`;
-  });
-  document.getElementById("classificationConversion").innerHTML = convHtml || "-";
+if(totalElement){
+totalElement.innerText="Pipeline Value: £"+stageTotal.toLocaleString();
 }
 
-function applyFilters() {
-  const sectorFilter = document.getElementById("sectorFilter").value;
-  const classificationFilter = document.getElementById("classificationFilter").value;
+});
 
-  document.querySelectorAll(".stage").forEach(stage => {
-    const stageName = stage.dataset.stage;
+document.getElementById("totalPipeline").innerText=
+"Total Pipeline: £"+total.toLocaleString();
 
-    if (classificationFilter === "Lite") {
-      const showLiteStage =
-        stageName === "Qualify" ||
-        stageName === "Convert" ||
-        stageName === "Deliver";
+document.getElementById("weightedPipeline").innerText=
+"Expected Revenue Forecast: £"+Math.round(weighted).toLocaleString();
 
-      stage.style.display = showLiteStage ? "flex" : "none";
-    } else {
-      stage.style.display = "flex";
-    }
-  });
+document.getElementById("expectedForecast").innerText=
+"Forecast: £"+Math.round(weighted).toLocaleString();
 
-  document.querySelectorAll(".card").forEach(card => {
-    const sectorMatch = sectorFilter === "All" || card.dataset.sector === sectorFilter;
-    const classMatch = classificationFilter === "All" || card.dataset.classification === classificationFilter;
+let mixHtml="";
 
-    card.classList.toggle("hidden", !(sectorMatch && classMatch));
-  });
+classificationOrder.forEach(cls=>{
 
-  document.getElementById("pipeline").style.justifyContent = "flex-start";
+const clsTotal=classificationTotals[cls]||0;
+const pct=total?Math.round((clsTotal/total)*100):0;
 
-  calculatePipeline();
+mixHtml+=`${cls}: ${pct}% (£${clsTotal.toLocaleString()})<br>`;
+
+});
+
+document.getElementById("pipelineMix").innerHTML=mixHtml;
+
+let convHtml="";
+
+classificationOrder.forEach(cls=>{
+
+const clsTotal=classificationTotals[cls]||0;
+const clsWeighted=classificationWeighted[cls]||0;
+
+const rate=clsTotal?Math.round((clsWeighted/clsTotal)*100):0;
+
+convHtml+=`${cls}: ${rate}% forecast confidence<br>`;
+
+});
+
+document.getElementById("classificationConversion").innerHTML=convHtml;
+
 }
 
-function bindCardEvents() {
-  document.querySelectorAll(".card").forEach(card => {
-    card.onclick = () => openModalFromCard(card);
+function applyFilters(){
 
-    card.addEventListener("dragstart", () => {
-      draggedCard = card;
-      card.classList.add("dragging");
-    });
+const sectorFilter=document.getElementById("sectorFilter").value;
+const classificationFilter=document.getElementById("classificationFilter").value;
 
-    card.addEventListener("dragend", () => {
-      card.classList.remove("dragging");
-      draggedCard = null;
-      document.querySelectorAll(".stage").forEach(stage => stage.classList.remove("drag-over"));
-      refreshCardStatuses();
-      calculatePipeline();
-    });
-  });
+document.querySelectorAll(".stage").forEach(stage=>{
+
+const stageName=stage.dataset.stage;
+
+if(classificationFilter==="Lite"){
+
+const showLiteStage=
+stageName==="Qualify"||
+stageName==="Convert"||
+stageName==="Deliver";
+
+stage.style.display=showLiteStage?"flex":"none";
+
+}else{
+stage.style.display="flex";
 }
 
-function bindDragAndDrop() {
-  document.querySelectorAll(".stage-body").forEach(stageBody => {
-    stageBody.addEventListener("dragover", e => {
-      e.preventDefault();
-      stageBody.parentElement.classList.add("drag-over");
-    });
+});
 
-    stageBody.addEventListener("dragleave", () => {
-      stageBody.parentElement.classList.remove("drag-over");
-    });
+document.querySelectorAll(".card").forEach(card=>{
 
-    stageBody.addEventListener("drop", e => {
-      e.preventDefault();
-      if (draggedCard) stageBody.appendChild(draggedCard);
-      stageBody.parentElement.classList.remove("drag-over");
-      refreshCardStatuses();
-      calculatePipeline();
-    });
-  });
+const sectorMatch=
+sectorFilter==="All"||
+card.dataset.sector===sectorFilter;
+
+const classMatch=
+classificationFilter==="All"||
+card.dataset.classification===classificationFilter;
+
+card.classList.toggle("hidden",!(sectorMatch&&classMatch));
+
+});
+
+calculatePipeline();
+
 }
 
-document.getElementById("sectorFilter").addEventListener("change", applyFilters);
-document.getElementById("classificationFilter").addEventListener("change", applyFilters);
+document.getElementById("sectorFilter")
+.addEventListener("change",applyFilters);
+
+document.getElementById("classificationFilter")
+.addEventListener("change",applyFilters);
 
 renderPipeline();
+
 </script>
 
 </body>
