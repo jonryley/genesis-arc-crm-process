@@ -8,40 +8,56 @@
 
 ## Objective
 
-Build a compelling commercial value case aligned to the customer need and buying logic.
+Develop a compelling commercial value case aligned to the customer need, strategic drivers, and buying logic.
+
+## Typical Inputs
+
+- Qualified opportunity
+- Customer discussions and discovery
+- Stakeholder insight
+- Commercial and operational requirements
+- Market and competitive intelligence
+- Internal capability assessment
 
 ## Activities
 
 - Define the customer problem in business terms
+- Clarify desired customer outcomes
 - Shape the value hypothesis
-- Clarify solution direction
-- Estimate financial and non financial value
-- Assess risks, dependencies, and assumptions
-- Align internal contributors
-- Map the path to proposal or commercial offer
+- Develop the solution direction
+- Estimate financial and non-financial value
+- Assess risks, assumptions, and dependencies
+- Evaluate commercial approach and pricing logic
+- Align internal contributors and delivery stakeholders
+- Define the buying and engagement strategy
+- Map the path towards proposal, bid, or commercial offer
 
-## Required Output
+## Required Outputs
 
-- Value proposition
+- Customer value proposition
 - Solution outline
-- Commercial logic
+- Commercial logic and indicative value
 - Buying strategy
-- Stakeholder plan
+- Stakeholder engagement plan
+- Risk and assumption assessment
+- Recommendation to progress, hold, rework, or stop
 
 ## Entry Criteria
 
-- Opportunity qualified
-- Customer need credible
-- Internal interest to pursue
+- Opportunity formally qualified
+- Customer need and problem are credible
+- Stakeholder engagement exists
+- Internal interest and capability to pursue are confirmed
 
 ## Exit Criteria
 
-- Customer value case is clear and commercially credible
+- The customer value case is commercially credible, differentiated, and strong enough to justify formal pursuit
 
 ## Key Questions
 
-- What outcome matters most to the customer
-- Why would they act
-- What changes if they do nothing
-- What is the economic case
-- What differentiates us
+- What outcome matters most to the customer?
+- Why would they act now?
+- What happens if they do nothing?
+- What is the commercial or economic impact?
+- What differentiates our approach?
+- Do we understand the buying logic and decision drivers?
