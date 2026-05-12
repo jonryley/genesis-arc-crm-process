@@ -58,7 +58,7 @@ Together they get you to the summit safely
 
 ---
 
-## Stage 2 — Value
+## Stage 2 — Shape
 
 **Objective:** Plan the climb properly to maximise success  
 
