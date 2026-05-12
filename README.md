@@ -19,7 +19,11 @@
 # Summit Growth Engine
 ## The AI-Enabled Commercial Operating System
 
-### Summit helps complex organisations improve qualification, governance, forecasting, delivery alignment and scalable growth through a gated commercial operating model powered by CRM, data and AI.
+<img src="images/SummitGBLPF.png" width="1200" alt="Summit Growth Engine Process Flow"/>
+
+Summit helps complex organisations improve qualification, governance,
+forecasting, delivery alignment and scalable growth through a gated
+commercial operating model powered by CRM, data and AI.
 
 ---
 
