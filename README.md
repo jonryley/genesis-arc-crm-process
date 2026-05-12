@@ -1,6 +1,6 @@
 ![Framework](https://img.shields.io/badge/Framework-Summit-gold)
 ![Model](https://img.shields.io/badge/Model-Gated_Business_Lifecycle-black)
-![Status](https://img.shields.io/badge/Version-1.0-gold)
+![Status](https://img.shields.io/badge/Version-1.1-gold)
 
 <div align="center">
 
