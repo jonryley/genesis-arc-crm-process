@@ -91,6 +91,7 @@ Predictable Scalable Growth
 - [Stage Definitions](stages/)
 - [Gate Definitions](gates/)
 - [Opportunity Classification](CLASSIFICATION.md)
+- [Summit Qualification Engine](SUMMIT-QQ.md)
 
 ### Commercial Application
 - [Services](SERVICES.md)
