@@ -129,25 +129,20 @@
       transform: translateY(-1px);
     }
 
-    .button.primary {
-      background: linear-gradient(135deg, var(--gold), var(--gold-2));
-      color: #17130a;
-      box-shadow: 0 10px 30px rgba(212,175,55,0.22);
-    }
+ .button.primary,
+.button.secondary {
+  background: rgba(255,255,255,0.025);
+  border-color: rgba(255,255,255,0.1);
+  color: var(--text);
+}
 
-    .button.secondary {
-      background: rgba(255,255,255,0.025);
-      border-color: rgba(255,255,255,0.1);
-      color: var(--text);
-    }
-
-    .button.primary:hover,
-    .button.secondary:hover {
-      background: linear-gradient(135deg, var(--gold), var(--gold-2));
-      color: #17130a;
-      border-color: transparent;
-      box-shadow: 0 10px 30px rgba(212,175,55,0.22);
-    }
+.button.primary:hover,
+.button.secondary:hover {
+  background: linear-gradient(135deg, var(--gold), var(--gold-2));
+  color: #17130a;
+  border-color: transparent;
+  box-shadow: 0 10px 30px rgba(212,175,55,0.22);
+}
 
     .hero {
       padding: 82px 0 0;
