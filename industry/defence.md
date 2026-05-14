@@ -1,10 +1,4 @@
 
-![Segment](https://img.shields.io/badge/Segment-Defence-gold)
-![Sector](https://img.shields.io/badge/Industry-National_Security-black)
-![Focus](https://img.shields.io/badge/Focus-Strategic_Governance_and_Growth-gold)
-
----
-
 <div align="center">
 
 <img src="../images/Summit%20logo%20alpha.png" 
@@ -18,6 +12,10 @@
      width="120"/>
 
 </div>
+![Segment](https://img.shields.io/badge/Segment-Defence-gold)
+![Sector](https://img.shields.io/badge/Industry-National_Security-black)
+![Focus](https://img.shields.io/badge/Focus-Strategic_Governance_and_Growth-gold)
+
 
 ---
 
